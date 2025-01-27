@@ -40,9 +40,9 @@ Example:
             ["width=100", "star-sized", "width=200", "star-sized"],
             [
                 "fixed-width cells have exactly the specified width", 
-                { content: "nothing interesting here", textColor: "grey" }, 
-                { content: "nothing interesting here", textColor: "grey" }, 
-                { content: "nothing interesting here", textColor: "grey" }
+                { text: "nothing interesting here", textColor: "grey" }, 
+                { text: "nothing interesting here", textColor: "grey" }, 
+                { text: "nothing interesting here", textColor: "grey" }
             ],
        ],
     });
@@ -101,13 +101,13 @@ Each cell can set a rowSpan or colSpan
     doc.table({
       columnStyles: [200, "*", "*"],
       data: [
-        [{ colSpan: 2, content: "Header with Colspan = 2" }, "Header 3"],
+        [{ colSpan: 2, text: "Header with Colspan = 2" }, "Header 3"],
         ["Header 1", "Header 2", "Header 3"],
         ["Sample value 1", "Sample value 2", "Sample value 3"],
         [
           {
             rowSpan: 3,
-            content: "rowspan set to 3\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor",
+            text: "rowspan set to 3\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor",
           },
           "Sample value 2",
           "Sample value 3",
@@ -119,7 +119,7 @@ Each cell can set a rowSpan or colSpan
           {
             colSpan: 2,
             rowSpan: 2,
-            content: "Both:\nrowspan and colspan\ncan be defined at the same time",
+            text: "Both:\nrowspan and colspan\ncan be defined at the same time",
           },
         ],
         ["Sample value 1"],
@@ -241,21 +241,21 @@ Zebra style
     doc.table({
       data: [
         [
-          { border: [true, false, false, false], backgroundColor: "#eee", content: "border:\n[true, false, false, false]" },
-          { border: false, backgroundColor: "#ddd", content: "border:\nfalse" },
-          { border: true, backgroundColor: "#eee", content: "border:\ntrue" },
+          { border: [true, false, false, false], backgroundColor: "#eee", text: "border:\n[true, false, false, false]" },
+          { border: false, backgroundColor: "#ddd", text: "border:\nfalse" },
+          { border: true, backgroundColor: "#eee", text: "border:\ntrue" },
         ],
         [
-          { rowSpan: 3, border: true, backgroundColor: "#eef", content: "rowSpan: 3\n\nborder:\ntrue" },
-          { border: undefined, backgroundColor: "#eee", content: "border:\nundefined (default)" },
-          { border: [false, false, false, true], backgroundColor: "#ddd", content: "border:\n[false, false, false, true]" },
+          { rowSpan: 3, border: true, backgroundColor: "#eef", text: "rowSpan: 3\n\nborder:\ntrue" },
+          { border: undefined, backgroundColor: "#eee", text: "border:\nundefined (default)" },
+          { border: [false, false, false, true], backgroundColor: "#ddd", text: "border:\n[false, false, false, true]" },
         ],
         [
-          { colSpan: 2, border: true, backgroundColor: "#efe", content: "colSpan: 2\n\nborder:\ntrue" },
+          { colSpan: 2, border: true, backgroundColor: "#efe", text: "colSpan: 2\n\nborder:\ntrue" },
         ],
         [
-          { border: 0, backgroundColor: "#eee", content: "border:\n0 (same as false)" },
-          { border: [false, true, true, false], backgroundColor: "#ddd", content: "border:\n[false, true, true, false]" },
+          { border: 0, backgroundColor: "#eee", text: "border:\n0 (same as false)" },
+          { border: [false, true, true, false], backgroundColor: "#ddd", text: "border:\n[false, true, true, false]" },
         ],
       ],
     })
@@ -275,8 +275,7 @@ Zebra style
             colSpan: 3,
             border: true,
             backgroundColor: "#ccc",
-            content:
-              "rowSpan: 3\ncolSpan: 3\n\nborder:\n[true, true, true, true]",
+            text: "rowSpan: 3\ncolSpan: 3\n\nborder:\n[true, true, true, true]",
           },
         ],
         ["row 2"],
@@ -345,7 +344,7 @@ is added to the document. This way, any calls to `text` or `table` will be place
 
 ## Cell options
 
-- `content` - The value, will be cast to a string (boolean is converted to `Y/N`, and `null` and `undefined` are not rendered but the cell is still outlined)
+- `text` - The value, will be cast to a string (`null` and `undefined` are not rendered but the cell is still outlined)
 - `rowSpan` - How many rows this cell covers, follows the same logic as HTML `rowspan`
 - `colSpan` - How many columns this cell covers, follows the same logic as HTML `colspan`
 - `padding` - The padding for the cell (default `0.25em`)
@@ -353,11 +352,12 @@ is added to the document. This way, any calls to `text` or `table` will be place
 - `borderColor` - The border colors for the cell (default `black`)
 - `font` - Font options for the cell
 - `backgroundColor` - Set the background color of the cell
-- `align` - The alignment of the cell content (default `{x: 'left', y: 'top'}`)
+- `align` - The alignment of the cell text (default `{x: 'left', y: 'top'}`)
 - `textStroke` - The text stroke (default `0`)
-- `textStrokeColor` - Sets the text stroke color of the cells content (default `black`)
-- `textColor` - Sets the text color of the cells content (default `black`)
+- `textStrokeColor` - Sets the text stroke color of the cells text (default `black`)
+- `textColor` - Sets the text color of the cells text (default `black`)
 - `type` - Sets the cell type (for accessibility) (default `TD`)
+- `textOptions` - Sets any text options you wish to provide (such as rotation)
 - `debug` - Whether to show the debug lines for the cell (default `false`)
 
 ## Column options

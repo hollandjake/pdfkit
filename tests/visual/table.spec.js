@@ -21,9 +21,9 @@ describe('table', function () {
           ['width=100', 'star-sized', 'width=200', 'star-sized'],
           [
             'fixed-width cells have exactly the specified width',
-            { content: 'nothing interesting here', textColor: 'grey' },
-            { content: 'nothing interesting here', textColor: 'grey' },
-            { content: 'nothing interesting here', textColor: 'grey' },
+            { text: 'nothing interesting here', textColor: 'grey' },
+            { text: 'nothing interesting here', textColor: 'grey' },
+            { text: 'nothing interesting here', textColor: 'grey' },
           ],
         ],
       });
@@ -78,14 +78,13 @@ describe('table', function () {
               };
         },
         data: [
-          [{ colSpan: 2, content: 'Header with Colspan = 2' }, 'Header 3'],
+          [{ colSpan: 2, text: 'Header with Colspan = 2' }, 'Header 3'],
           ['Header 1', 'Header 2', 'Header 3'],
           ['Sample value 1', 'Sample value 2', 'Sample value 3'],
           [
             {
               rowSpan: 3,
-              content:
-                'rowspan set to 3\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor',
+              text: 'rowspan set to 3\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor',
             },
             'Sample value 2',
             'Sample value 3',
@@ -97,8 +96,7 @@ describe('table', function () {
             {
               colSpan: 2,
               rowSpan: 2,
-              content:
-                'Both:\nrowspan and colspan\ncan be defined at the same time',
+              text: 'Both:\nrowspan and colspan\ncan be defined at the same time',
             },
           ],
           ['Sample value 1'],
@@ -220,17 +218,17 @@ describe('table', function () {
             {
               border: [true, false, false, false],
               backgroundColor: '#eee',
-              content: 'border:\n[true, false, false, false]',
+              text: 'border:\n[true, false, false, false]',
             },
             {
               border: false,
               backgroundColor: '#ddd',
-              content: 'border:\nfalse',
+              text: 'border:\nfalse',
             },
             {
               border: true,
               backgroundColor: '#eee',
-              content: 'border:\ntrue',
+              text: 'border:\ntrue',
             },
           ],
           [
@@ -238,17 +236,17 @@ describe('table', function () {
               rowSpan: 3,
               border: true,
               backgroundColor: '#eef',
-              content: 'rowSpan: 3\n\nborder:\ntrue',
+              text: 'rowSpan: 3\n\nborder:\ntrue',
             },
             {
               border: undefined,
               backgroundColor: '#eee',
-              content: 'border:\nundefined (default)',
+              text: 'border:\nundefined (default)',
             },
             {
               border: [false, false, false, true],
               backgroundColor: '#ddd',
-              content: 'border:\n[false, false, false, true]',
+              text: 'border:\n[false, false, false, true]',
             },
           ],
           [
@@ -256,19 +254,19 @@ describe('table', function () {
               colSpan: 2,
               border: true,
               backgroundColor: '#efe',
-              content: 'colSpan: 2\n\nborder:\ntrue',
+              text: 'colSpan: 2\n\nborder:\ntrue',
             },
           ],
           [
             {
               border: 0,
               backgroundColor: '#eee',
-              content: 'border:\n0 (same as false)',
+              text: 'border:\n0 (same as false)',
             },
             {
               border: [false, true, true, false],
               backgroundColor: '#ddd',
-              content: 'border:\n[false, true, true, false]',
+              text: 'border:\n[false, true, true, false]',
             },
           ],
         ],
@@ -287,8 +285,7 @@ describe('table', function () {
               colSpan: 3,
               border: true,
               backgroundColor: '#ccc',
-              content:
-                'rowSpan: 3\ncolSpan: 3\n\nborder:\n[true, true, true, true]',
+              text: 'rowSpan: 3\ncolSpan: 3\n\nborder:\n[true, true, true, true]',
             },
           ],
           ['row 2'],

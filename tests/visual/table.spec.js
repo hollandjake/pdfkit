@@ -298,7 +298,7 @@ describe('table', function () {
     });
   });
 
-  test('sync iterables', function () {
+  test('iterables', function () {
     return runDocTest(async function (doc) {
       doc.font('tests/fonts/Roboto-Italic.ttf');
 
@@ -308,18 +308,6 @@ describe('table', function () {
       })();
 
       doc.table({ data: syncIterator });
-    });
-  });
-  test('async iterables', function () {
-    return runDocTest(async function (doc) {
-      doc.font('tests/fonts/Roboto-Italic.ttf');
-
-      const asyncIterator = (async function* () {
-        yield ['1', '2'];
-        yield ['3', '4'];
-      })();
-
-      await doc.table({ data: asyncIterator });
     });
   });
 

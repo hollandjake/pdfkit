@@ -390,4 +390,23 @@ describe('table', function () {
       },
     );
   });
+
+  test('multi line rotated text', function () {
+    return runDocTest(
+      { layout: 'landscape', margin: 19 },
+      async function (doc) {
+        doc.font('tests/fonts/Roboto-Italic.ttf');
+        doc.table({
+          debug: true,
+          defaultStyle: { align: 'center', width: 200, height: 200 },
+          columnStyles: [{ textOptions: { rotation: 90 } }],
+          data: [
+            [
+              'Hello\nWorld',
+            ],
+          ],
+        });
+      },
+    );
+  });
 });

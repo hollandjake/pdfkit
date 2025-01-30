@@ -1,5 +1,5 @@
 {
-  "name": "pdfkit",
+  "name": "@hollandjake/pdfkit",
   "description": "A PDF generation library for Node.js",
   "keywords": [
     "pdf",
@@ -9,19 +9,15 @@
     "document",
     "vector"
   ],
-  "version": "0.16.0",
+  "version": "0.17.0-beta.14",
   "homepage": "http://pdfkit.org/",
-  "author": {
-    "name": "Devon Govett",
-    "email": "devongovett@gmail.com",
-    "url": "http://badassjs.com/"
-  },
+  "author": "Jake Holland",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/foliojs/pdfkit.git"
+    "url": "https://github.com/hollandjake/pdfkit.git"
   },
-  "bugs": "https://github.com/foliojs/pdfkit/issues",
+  "bugs": "https://github.com/hollandjake/pdfkit/issues",
   "devDependencies": {
     "@babel/core": "^7.26.0",
     "@babel/plugin-external-helpers": "^7.25.9",
@@ -72,6 +68,7 @@
   },
   "main": "js/pdfkit.js",
   "module": "js/pdfkit.es.js",
+  "types": "./index.d.ts",
   "browserify": {
     "transform": [
       "brfs"

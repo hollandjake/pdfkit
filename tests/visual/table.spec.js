@@ -425,4 +425,14 @@ describe('table', function () {
       });
     });
   });
+
+  test('last line height ignoring gap - issue #1620', function() {
+    return runDocTest(function (doc) {
+      doc.font('tests/fonts/Roboto-Regular.ttf');
+      doc.table({
+        debug: true,
+        data: [['test\ntest']],
+      });
+    });
+  })
 });
